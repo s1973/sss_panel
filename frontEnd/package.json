@@ -1,0 +1,62 @@
+{
+  "name": "sss_panel",
+  "version": "1.0.0",
+  "description": "my admin panel",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s1973/sss_panel.git"
+  },
+  "author": "s1973",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s1973/sss_panel/issues"
+  },
+  "homepage": "https://github.com/s1973/sss_panel#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash-es": "^4.17.11",
+    "mini-css-extract-plugin": "^0.4.2",
+    "path": "^0.12.7",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-pxtorem": "^4.0.1",
+    "postcss-sprites": "^4.2.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "url-loader": "^1.0.1",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-deep-scope-plugin": "^1.6.0",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-parallel-uglify-plugin": "^1.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "element-ui": "^2.4.11",
+    "font-awesome": "^4.7.0",
+    "js-cookie": "^2.2.0",
+    "lockr": "^0.8.5",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "nprogress": "^0.2.0",
+    "query-string": "^6.2.0",
+    "vee-validate": "^2.1.3",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1"
+  }
+}
