@@ -4,6 +4,7 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const projectRoot = path.resolve(__dirname, '../')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
@@ -29,7 +30,14 @@ module.exports = {
     new webpack.DefinePlugin({
       HOST: process.env.NODE_ENV === 'production' ? PUB_HOST : DEV_HOST
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    // extract css into its own file
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
   ],
   resolve: {
     extensions: ['*', '.js', '.json', '.vue']
@@ -53,6 +61,13 @@ module.exports = {
         query: {
           presets: ['es2015', 'stage-3']
         }
+      },
+      {        
+        test: /\.css$/,        
+        use:[ 
+            MiniCssExtractPlugin.loader,  // replace ExtractTextPlugin.extract({..})                  
+            'css-loader',        
+        ]     
       },
       {
         test: /\.json$/,
