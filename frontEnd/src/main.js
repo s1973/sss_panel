@@ -60,6 +60,7 @@ const bus = new Vue()
 window.bus = bus
 
 new Vue({
+  el: '#app',
   template: '<App/>',
   filters: filter,
   router,

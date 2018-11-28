@@ -61,3 +61,4 @@
 ## ElementUi升级2.4.11
 1. 引入css文件变更为`element-ui/lib/theme-chalk/index.css`
 > import 'element-ui/lib/theme-chalk/index.css'
+2. 小细节太多了，参考[ElementUI官方日志](http://element-cn.eleme.io/2.4/#/zh-CN/component/changelog)，一个一个问题搜索解决吧...

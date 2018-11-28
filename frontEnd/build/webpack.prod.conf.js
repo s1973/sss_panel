@@ -6,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 var env = config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {
@@ -39,7 +40,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
-    })
+    }),
+    new CleanWebpackPlugin(path.resolve(__dirname, '../dist'), {
+      root: path.resolve(__dirname, '../'),    // 设置root
+      verbose: true
+  })
   ],
   optimization: {
     // [new UglifyJsPlugin({...})]
@@ -51,12 +56,13 @@ var webpackConfig = merge(baseWebpackConfig, {
     },
     // split vendor js into its own file
     splitChunks:{ 
-      chunks: 'async',
+      chunks: 'all',
       minSize: 30000,
       minChunks: 1,
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
-      name: false,
+      name: true,
+      filename: '[name].[chunkhash:8].js',
       cacheGroups: {
         vendor: {
           name: 'vendor',
