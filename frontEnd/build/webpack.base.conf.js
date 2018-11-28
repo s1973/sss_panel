@@ -36,14 +36,14 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
-      },
+      // {
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   loader: 'eslint-loader'
+      // },
       {
         test: /\.vue$/,
-        use: ['vue-loader','eslint-loader']
+        use: ['vue-loader']
       },
       {
         test: /\.js$/,

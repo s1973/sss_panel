@@ -48,3 +48,16 @@
 4. `Make sure the rule matching .vue files include vue-loader in its use`这个问题想了很久，首先就是官方文档里的`vue-loader`需要在plugins里声明，但依然报错，后来直接清理了rule里.vue的相关loader就行了，应该是有冲突
 5. webpack4里配置文件必须声明`mode`属性,默认为production，可设为none禁用默认处理
 6. `ExtractTextPlugin`也寿终正寝了，改用`mini-css-extract-plugin`吧
+7. `window is not defined`经查需要将ouput.globalObject设为`this`，默认为window (更正：使用`mini-css-extract-plugin`时同时使用`style-loader`也会报这个错，此时移除style-loader)
+>```
+> output: {
+>    path: config.build.assetsRoot,
+>    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
+>    filename: '[name].js',
+>    globalObject: 'this'
+>  },
+>```
+
+## ElementUi升级2.4.11
+1. 引入css文件变更为`element-ui/lib/theme-chalk/index.css`
+> import 'element-ui/lib/theme-chalk/index.css'

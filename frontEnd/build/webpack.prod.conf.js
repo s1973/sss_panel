@@ -21,8 +21,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       {        
         test: /\.css$/,        
         use:[ 
-            MiniCssExtractPlugin.loader,  // replace ExtractTextPlugin.extract({..})         
-            'style-loader',          
+            MiniCssExtractPlugin.loader,  // replace ExtractTextPlugin.extract({..})                  
             'css-loader',        
         ]     
       }
