@@ -61,10 +61,10 @@ window.bus = bus
 
 new Vue({
   el: '#app',
-  template: '<App/>',
+  template: '<App></App>',
   filters: filter,
   router,
   store,
-  components: { App }
-// render: h => h(Login)
+  components: { App },
+  render: h => h(App)
 }).$mount('#app')
