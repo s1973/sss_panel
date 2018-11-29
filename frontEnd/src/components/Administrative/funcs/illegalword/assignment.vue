@@ -10,7 +10,7 @@
       <div class="fl w-200 m-l-30">
       <el-autocomplete
         v-model="keywords"
-        icon="search"
+        suffix-icon="el-icon-search"
         clearable
         placeholder="请输入网站名称" @keyup.enter.native="rePageSize()"
         :fetch-suggestions="getSites"
