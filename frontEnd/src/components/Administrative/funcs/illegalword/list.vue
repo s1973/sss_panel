@@ -91,6 +91,7 @@
         <el-autocomplete
           v-model="keywords"
           icon="search"
+          clearable
           placeholder="请输入网站名称" @keyup.enter.native="rePageSize()"
           :fetch-suggestions="getSites"
           @select="handleSelect">
@@ -106,7 +107,7 @@
                 </el-select>
             </div>
             <div class="fl w-140 m-l-20"><el-button type="primary" :loading="loading2" @click="rePageSize()">当前显示 {{limit}}条/页</el-button></div>
-            <div class="fl w-50 m-l-20"><el-button icon="delete" @click="empty()"></el-button></div>
+            <div class="fl w-50 m-l-20"><el-button icon="el-icon-delete" @click="empty()"></el-button></div>
             
 		</div>
         <transition name="fadeStart" v-cloak>
