@@ -1,5 +1,5 @@
 <template>
-	<el-dialog ref="dialog" custom-class="w-400 h-300" title="修改密码">
+	<el-dialog ref="dialog" :visible.sync="isshowChangePwdDialog" custom-class="w-400 h-300" title="修改密码">
 		<div class="ovf-auto">
 			<el-form ref="form" :model="form" :rules="rules" label-width="80px">
 				<el-form-item label="旧密码" prop="old_pwd">
@@ -25,6 +25,7 @@
     data() {
       return {
         disable: false,
+        isshowChangePwdDialog: false,
         form: {
           auth_key: '',
           old_pwd: '',
@@ -44,7 +45,7 @@
     },
     methods: {
       open() {
-        this.$refs.dialog.open()
+        this.isshowChangePwdDialog = true
       },
       close() {
         this.$refs.dialog.close()
