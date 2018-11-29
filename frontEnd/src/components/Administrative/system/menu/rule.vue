@@ -1,8 +1,8 @@
 <template>
-	<el-dialog ref="dialog" custom-class="w-900 h-480 ovf-auto" title="节点列表">
+	<el-dialog ref="dialog" :visible.sync="dialogVisible" custom-class="w-900 h-600 ovf-auto" title="节点列表">
 		<div class="pos-rel h-60">
 			<el-input placeholder="请输入内容" v-model="keyword" class="search-btn w-300">
-				<el-button slot="append" icon="search" @click="searchMsg()"></el-button>
+				<el-button slot="append" icon="el-icon-search" @click="searchMsg()"></el-button>
 			</el-input>
 		</div>
 		<div>
@@ -50,12 +50,13 @@
     data() {
       return {
         keyword: '',
+        dialogVisible: false,
         tableData: []
       }
     },
     methods: {
       open() {
-        this.$refs.dialog.open()
+        this.dialogVisible = true
       },
       closeDialog() {
         this.$refs.dialog.close()

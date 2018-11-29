@@ -252,7 +252,7 @@
         users: [],
         user: '',
         dialogTableVisible: false,
-        limit: 20
+        limit: 15
       }
     },
     methods: {
