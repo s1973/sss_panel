@@ -8,7 +8,7 @@
 ### 新增广告词管理功能
 后端数据为使用Python多进程+协程爬取的网站平台6000多站点的违规词信息  
 实现了数据管理、筛选，人员指派，状态管理，账号权限控制等
-![index](screenshot/ille-list.png)
+![index](screenshot/localhost_8080_home_func_illegalword.png)
 ### 主要技术栈
 - 后端框架：ThinkPHP 5.1.x
 - 前端MVVM框架：Vue.JS 2.5
@@ -21,3 +21,10 @@
 ### 数据交互
 数据交互通过axios以及RESTful架构来实现  
 用户校验通过登录返回的auth_key放在header
+### 前端vue-router服务器配置
+在vue-router中使用history模式时需要在服务器中配置以使用该特性（nginx示例）
+```
+location ~ /home {
+  try_files $uri $uri/ /index.html;
+}
+```
