@@ -142,8 +142,8 @@
       show-overflow-tooltip
       min-width="100">
         <template scope="scope">        
-          <el-tag v-if="scope.row.agentname">{{scope.row.agentname}}</el-tag>          
-          <el-tag type="gray" v-else>未指派</el-tag>
+          <el-tag type="success" v-if="scope.row.agentname">{{scope.row.agentname}}</el-tag>          
+          <el-tag type="info" v-else>未指派</el-tag>
         </template>
       </el-table-column>
 			<el-table-column
@@ -178,15 +178,15 @@
               <i class="el-icon-search"></i>
               {{ scope.row.status | status }}
             </el-tag>
-            <el-tag type="gray" v-else-if="scope.row.status==0">
-              <i class="el-icon-circle-cross"></i>
+            <el-tag type="info" v-else-if="scope.row.status==0">
+              <i class="el-icon-circle-close"></i>
               {{ scope.row.status | status }}
             </el-tag>
             <el-tag type="success" v-else-if="scope.row.status==2">
               <i class="el-icon-circle-check"></i>
               {{ scope.row.status | status }}
             </el-tag>
-            <el-tag type="gray" v-else>
+            <el-tag type="info" v-else>
               {{ scope.row.status | status }}
             </el-tag>
           </div>
