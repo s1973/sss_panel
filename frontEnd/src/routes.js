@@ -22,6 +22,7 @@ import usersAdd from './components/Administrative/personnel/users/add.vue'
 import usersEdit from './components/Administrative/personnel/users/edit.vue'
 import illegallist from './components/Administrative/funcs/illegalword/list.vue'
 import assignment from './components/Administrative/funcs/illegalword/assignment.vue'
+import visualize from './components/Administrative/funcs/illegalword/visualize.vue'
 
 /**
  * meta参数解析
@@ -44,7 +45,8 @@ const routes = [
     component: Home,
     children: [
       { path: 'func/illegalword', component: illegallist, name: 'illegalword', meta: { hideLeft: false, module: 'Administrative', menu: 'illegalword' }},
-      { path: 'func/assignment', component: assignment, name: 'assignment', meta: { hideLeft: false, module: 'Administrative', menu: 'assignment' }}
+      { path: 'func/assignment', component: assignment, name: 'assignment', meta: { hideLeft: false, module: 'Administrative', menu: 'assignment' }},
+      { path: 'func/visualize', component: visualize, name: 'visualize', meta: { hideLeft: false, module: 'Administrative', menu: 'visualize' }}
     ]
   },
   {

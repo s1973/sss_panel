@@ -48,7 +48,7 @@
         this.isshowChangePwdDialog = true
       },
       close() {
-        this.$refs.dialog.close()
+        this.isshowChangePwdDialog = false
       },
       submit() {
         this.$refs.form.validate((pass) => {

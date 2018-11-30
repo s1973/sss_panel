@@ -25,12 +25,11 @@
 				width="180">
 				</el-table-column>
 				<el-table-column
-				inline-template
 				label="操作"
 				width="100">
-					<div>
-						<el-button size="small" @click="selectRule(row)">选择</el-button>
-					</div>
+					<template slot-scope="scope">
+						<el-button size="small" @click="selectRule(scope.row)">选择</el-button>
+					</template>
 				</el-table-column>
 			</el-table>
 		</div>
@@ -59,7 +58,7 @@
         this.dialogVisible = true
       },
       closeDialog() {
-        this.$refs.dialog.close()
+        this.dialogVisible = false
       },
       selectRule(item) {
         setTimeout(() => {
