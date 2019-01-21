@@ -35,8 +35,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].[chunkhash:8].css",
-      chunkFilename: "[name].[chunkhash:8].css"
+      filename: utils.assetsPath("[name].[chunkhash:8].css"),
+      chunkFilename: utils.assetsPath("[name].[chunkhash:8].css")
     }),
   ],
   resolve: {
